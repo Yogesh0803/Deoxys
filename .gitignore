@@ -1,1 +1,5 @@
 *.apk
+node_modules/
+reports/
+package-lock.json
+ui-dump*.txt
