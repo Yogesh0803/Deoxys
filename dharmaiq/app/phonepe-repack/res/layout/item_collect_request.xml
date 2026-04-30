@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/item_collect_request_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.LinearLayoutCompat android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/bg_collect_request_dialog" android:layout_width="260.0dip" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:textSize="@dimen/dimen_text_24" android:textStyle="bold" android:textColor="@android:color/black" android:id="@id/requestedByText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/requested_by" android:fontFamily="serif" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/merchantLogo" android:tag="binding_1" android:layout_width="@dimen/bank_account_logo_dimen" android:layout_height="@dimen/bank_account_logo_dimen" android:layout_marginTop="@dimen/default_space_16" />
+        <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/dimen_text_16" android:textStyle="bold" android:textColor="@android:color/black" android:id="@id/merchantName" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_space_4" android:maxLines="1" android:fontFamily="serif" />
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:id="@id/verifiedLogo" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginTop="4.0dip" android:layout_marginStart="@dimen/default_space_2" app:srcCompat="@drawable/ic_baseline_verified_24" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView android:id="@id/amount" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_space_4" style="@style/amount_text_style" />
+        <com.google.android.material.button.MaterialButton android:id="@id/payButton" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_space_32" android:text="@string/pay" style="@style/Widget.MaterialComponents.Button" />
+        <com.google.android.material.button.MaterialButton android:id="@id/declineButton" android:tag="binding_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/decline" style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

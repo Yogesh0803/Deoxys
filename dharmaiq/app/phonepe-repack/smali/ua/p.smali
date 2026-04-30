@@ -1,0 +1,11 @@
+.class public interface abstract Lua/p;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lla/a;
+
+
+# virtual methods
+.method public abstract j(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.end method

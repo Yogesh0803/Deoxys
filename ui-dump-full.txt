@@ -1,0 +1,69 @@
+=== FULL APP EXPLORATION ===
+
+=== CALL SCREEN - INITIAL ===
+
+TEXT: "Ria" at [470,158][611,287]
+TEXT: "00:02" at [499,329][583,372]
+
+CLICKABLE: text="" desc="" at [126,2022][315,2211]
+CLICKABLE: text="" desc="" at [446,2022][635,2211]
+CLICKABLE: text="" desc="" at [765,2022][954,2211]
+=== CALL SCREEN - AFTER MUTE TAP ===
+
+TEXT: "Ria" at [470,158][611,287]
+TEXT: "00:04" at [499,329][583,372]
+
+CLICKABLE: text="" desc="" at [126,2022][315,2211]
+CLICKABLE: text="" desc="" at [446,2022][635,2211]
+CLICKABLE: text="" desc="" at [765,2022][954,2211]
+=== CALL SCREEN - AFTER UNMUTE TAP ===
+
+TEXT: "Ria" at [470,158][611,287]
+TEXT: "00:07" at [500,329][582,372]
+
+CLICKABLE: text="" desc="" at [126,2022][315,2211]
+CLICKABLE: text="" desc="" at [446,2022][635,2211]
+CLICKABLE: text="" desc="" at [765,2022][954,2211]
+=== CALL SCREEN - AFTER SPEAKER TAP ===
+
+TEXT: "Ria" at [470,158][611,287]
+TEXT: "00:09" at [498,329][583,372]
+
+CLICKABLE: text="" desc="" at [126,2022][315,2211]
+CLICKABLE: text="" desc="" at [446,2022][635,2211]
+CLICKABLE: text="" desc="" at [765,2022][954,2211]
+=== AFTER TAP SPECIAL GIFT ===
+
+TEXT: "Test User" at [263,358][550,444]
+TEXT: "0 xp earned lifetime" at [327,444][663,494]
+TEXT: "Special Gift" at [148,606][322,649]
+TEXT: "100 XP pe milega tumhara&#10;special gift" at [85,665][384,738]
+TEXT: "Earn Certificate!" at [636,606][883,649]
+TEXT: "Course poora karo, official&#10;certificate paao" at [573,665][875,738]
+TEXT: "English Learning" at [117,876][399,926]
+TEXT: "Module 1" at [462,1064][618,1107]
+TEXT: "Introducing Yourself Confidently" at [95,1128][985,1300]
+TEXT: "0/6 skills completed" at [368,1342][713,1392]
+TEXT: "0.0" at [95,1398][985,1471]
+TEXT: "View All Skills" at [403,1566][678,1624]
+TEXT: "Progress" at [249,148][430,206]
+
+CLICKABLE: text="" desc="" at [53,343][221,511]
+CLICKABLE: text="" desc="" at [85,606][506,738]
+CLICKABLE: text="" desc="" at [573,606][995,738]
+CLICKABLE: text="" desc="" at [64,838][452,964]
+CLICKABLE: text="" desc="" at [95,1529][985,1661]
+CLICKABLE: text="" desc="" at [46,114][172,240]
+CLICKABLE: text="" desc="settings" at [914,114][1040,240]
+DESC: "settings" at [914,114][1040,240]
+=== SKILL "Say your 20-second intro" NOT FOUND ===
+
+=== SKILL "personal line" NOT FOUND ===
+
+=== SKILL "intro in 3 ways" NOT FOUND ===
+
+=== SKILL "Tell me about yourself" NOT FOUND ===
+
+=== SKILL "Ask one friendly question" NOT FOUND ===
+
+=== SKILL "Start a conversation naturally" NOT FOUND ===

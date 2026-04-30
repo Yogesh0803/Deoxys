@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <DropDownPreference android:icon="@drawable/ic_baseline_alt_route_24" android:entries="@array/pref_environment_options" android:title="Environment" android:key="@string/pref_key_environment" android:entryValues="@array/pref_environment_options" app:useSimpleSummaryProvider="true" />
+    <EditTextPreference android:icon="@drawable/ic_baseline_person_24" android:title="VPA for collect" android:key="@string/pref_key_vpa" app:useSimpleSummaryProvider="true" />
+    <SwitchPreference android:icon="@drawable/ic_baseline_slow_motion_video_24" android:title="Enable delays" android:key="@string/pref_key_delay" app:defaultValue="true" />
+    <PreferenceScreen android:icon="@drawable/ic_version" android:title="App Version" android:key="@string/pref_key_app_version" />
+</PreferenceScreen>

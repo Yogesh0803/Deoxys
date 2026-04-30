@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>App Exploration Report</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<style>
+  :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --green: #3fb950; --red: #f85149; --orange: #d29922; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; line-height: 1.5; }
+  h1 { font-size: 24px; margin-bottom: 8px; }
+  h2 { font-size: 18px; margin: 32px 0 12px; color: var(--accent); }
+  h3 { font-size: 15px; margin-bottom: 8px; }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+  .stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 24px; min-width: 140px; }
+  .stat-value { font-size: 28px; font-weight: 700; }
+  .stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; }
+  .stat-green .stat-value { color: var(--green); }
+  .stat-orange .stat-value { color: var(--orange); }
+  .stat-red .stat-value { color: var(--red); }
+  .screen-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .screen-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .screen-id { background: var(--accent); color: #000; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 13px; }
+  .screen-body { display: flex; gap: 16px; flex-wrap: wrap; }
+  .screen-img { max-width: 200px; border-radius: 6px; border: 1px solid var(--border); cursor: pointer; }
+  .screen-img:hover { border-color: var(--accent); }
+  .elements-table { flex: 1; min-width: 300px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; }
+  .badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+  .badge-nav { background: #1f6feb33; color: var(--accent); }
+  .badge-same { background: #30363d; color: var(--muted); }
+  .badge-ext { background: #d2992233; color: var(--orange); }
+  .badge-err { background: #f8514933; color: var(--red); }
+  .badge-pass { background: #3fb95033; color: var(--green); }
+  .badge-fail { background: #f8514933; color: var(--red); }
+  .validation-issues { font-size: 11px; color: var(--red); margin-top: 4px; }
+  .vision-summary { font-size: 11px; color: var(--muted); font-style: italic; margin-top: 2px; }
+  .mermaid { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .error-row { background: #f8514911; }
+  .texts { color: var(--muted); font-size: 12px; max-height: 100px; overflow-y: auto; margin-top: 8px; }
+  .collapsible { cursor: pointer; user-select: none; }
+  .collapsible::before { content: '▸ '; }
+  .collapsible.open::before { content: '▾ '; }
+  .collapse-content { display: none; }
+  .collapse-content.open { display: block; }
+  @media (max-width: 768px) { .screen-body { flex-direction: column; } .screen-img { max-width: 100%; } }
+</style>
+</head>
+<body>
+<h1>App Exploration Report</h1>
+<p class="meta">com.vel.aise.app.staging — 2026-04-30T11:25:50.064Z — 139.3s</p>
+
+<div class="stats">
+  <div class="stat stat-green"><div class="stat-value">4</div><div class="stat-label">Screens</div></div>
+  <div class="stat"><div class="stat-value">30</div><div class="stat-label">Elements</div></div>
+  <div class="stat stat-orange"><div class="stat-value">2</div><div class="stat-label">Transitions</div></div>
+  <div class="stat"><div class="stat-value">2</div><div class="stat-label">Navigated</div></div>
+  <div class="stat"><div class="stat-value">0</div><div class="stat-label">Same Screen</div></div>
+  <div class="stat"><div class="stat-value">0</div><div class="stat-label">External</div></div>
+  <div class="stat stat-red"><div class="stat-value">0</div><div class="stat-label">Errors</div></div>
+  
+  <div class="stat stat-green"><div class="stat-value">4</div><div class="stat-label">QA Passed</div></div>
+  <div class="stat stat-red"><div class="stat-value">0</div><div class="stat-label">QA Failed</div></div>
+</div>
+
+<h2>Navigation Graph</h2>
+<div class="mermaid">
+graph TD
+  S3["S3"] -->|"android.widget.Button"| S4["S4"]
+  S4["S4"] -->|"android.widget.Button"| S3["S3"]
+</div>
+
+<h2>Screens</h2>
+<div class="screen-card">
+  <div class="screen-header">
+    <span class="screen-id">S1</span>
+    <span>com.vel.aise.app.MainActivity</span>
+    <span style="color:var(--muted);font-size:12px">depth=0 | 14 elements</span>
+    <span class="badge badge-pass">✓ QA Pass</span>
+  </div>
+  
+  <div class="screen-body">
+    <img class="screen-img" src="screenshots/S1.png" alt="S1" onclick="window.open('screenshots/S1.png')">
+    <div class="elements-table">
+      <table>
+        <thead><tr><th>Element</th><th>Type</th><th>Selector</th><th>Priority</th></tr></thead>
+        <tbody><tr>
+        <td>Collapse</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Clear</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Expand</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Expand</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Manage</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Clear all</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Internet, AndroidWifi</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Bluetooth, Off</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Modes, No active modes</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Silent</td>
+        <td>TextView</td>
+        <td>uiSelector</td>
+        <td>50</td>
+      </tr>
+<tr>
+        <td>Clear all silent notifications</td>
+        <td>ImageView</td>
+        <td>accessibility-id</td>
+        <td>50</td>
+      </tr>
+<tr>
+        <td>4:53</td>
+        <td>TextView</td>
+        <td>accessibility-id</td>
+        <td>50</td>
+      </tr>
+<tr>
+        <td>Wifi signal full.</td>
+        <td>ImageView</td>
+        <td>accessibility-id</td>
+        <td>50</td>
+      </tr>
+<tr>
+        <td>android.view.View</td>
+        <td>View</td>
+        <td>uiSelector</td>
+        <td>40</td>
+      </tr></tbody>
+      </table>
+      <h3 class="collapsible" style="margin-top:8px">Extracted Texts</h3>
+      <div class="collapse-content texts">Silent, Clear all silent notifications, Ai se, •, 1, •, now, Collapse, Recording HTTP activity, 201 POST /api/v1/auth, Clear, Clear, Google Play Protect is turned on, •, 1 minute ago, This feature protects your device from harmful apps, Expand, Physical keyboards configured, •, 1 minute ago</div>
+    </div>
+  </div>
+</div>
+<div class="screen-card">
+  <div class="screen-header">
+    <span class="screen-id">S2</span>
+    <span>.auth.api.credentials.assistedsignin.ui.PhoneNumberHintActivity</span>
+    <span style="color:var(--muted);font-size:12px">depth=0 | 14 elements</span>
+    <span class="badge badge-pass">✓ QA Pass</span>
+  </div>
+  
+  <div class="screen-body">
+    <img class="screen-img" src="screenshots/S2.png" alt="S2" onclick="window.open('screenshots/S2.png')">
+    <div class="elements-table">
+      <table>
+        <thead><tr><th>Element</th><th>Type</th><th>Selector</th><th>Priority</th></tr></thead>
+        <tbody><tr>
+        <td>Collapse</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Clear</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Expand</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Expand</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Manage</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Clear all</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Internet, AndroidWifi</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Bluetooth, Off</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Modes, No active modes</td>
+        <td>Button</td>
+        <td>accessibility-id</td>
+        <td>60</td>
+      </tr>
+<tr>
+        <td>Silent</td>
+        <td>TextView</td>
+        <td>uiSelector</td>
+        <td>50</td>
+      </tr>
+<tr>
+        <td>Clear all silent notifications</td>
+        <td>ImageView</td>
+        <td>accessibility-id</td>
+        <td>50</td>
+      </tr>
+<tr>
+        <td>4:53</td>
+        <td>TextView</td>
+        <td>accessibility-id</td>
+        <td>50</td>
+      </tr>
+<tr>
+        <td>Wifi signal full.</td>
+        <td>ImageView</td>
+        <td>accessibility-id</td>
+        <td>50</td>
+      </tr>
+<tr>
+        <td>android.view.View</td>
+        <td>View</td>
+        <td>uiSelector</td>
+        <td>40</td>
+      </tr></tbody>
+      </table>
+      <h3 class="collapsible" style="margin-top:8px">Extracted Texts</h3>
+      <div class="collapse-content texts">Silent, Clear all silent notifications, Ai se, •, 2, •, now, Collapse, Recording HTTP activity, 200 POST /api/v1/client, 201 POST /api/v1/auth, Clear, Clear, Google Play Protect is turned on, •, 1 minute ago, This feature protects your device from harmful apps, Expand, Physical keyboards configured, •</div>
+    </div>
+  </div>
+</div>
+<div class="screen-card">
+  <div class="screen-header">
+    <span class="screen-id">S3</span>
+    <span>com.vel.aise.app.MainActivity</span>
+    <span style="color:var(--muted);font-size:12px">depth=0 | 1 elements</span>
+    <span class="badge badge-pass">✓ QA Pass</span>
+  </div>
+  
+  <div class="screen-body">
+    <img class="screen-img" src="screenshots/S3.png" alt="S3" onclick="window.open('screenshots/S3.png')">
+    <div class="elements-table">
+      <table>
+        <thead><tr><th>Element</th><th>Type</th><th>Selector</th><th>Priority</th></tr></thead>
+        <tbody><tr>
+        <td>android.widget.Button</td>
+        <td>Button</td>
+        <td>none</td>
+        <td>40</td>
+      </tr></tbody>
+      </table>
+      <h3 class="collapsible" style="margin-top:8px">Extracted Texts</h3>
+      <div class="collapse-content texts">Dost se baatein, karna, English bolna, seekhna, Continue, Aap kya karna&amp;#10;chahte ho?, Bas ek option choose karo</div>
+    </div>
+  </div>
+</div>
+<div class="screen-card">
+  <div class="screen-header">
+    <span class="screen-id">S4</span>
+    <span>com.vel.aise.app.MainActivity</span>
+    <span style="color:var(--muted);font-size:12px">depth=1 | 1 elements</span>
+    <span class="badge badge-pass">✓ QA Pass</span>
+  </div>
+  <div class="validation-issues">POSSIBLE_ERROR: 2 error-related text patterns detected</div>
+  <div class="screen-body">
+    <img class="screen-img" src="screenshots/S4.png" alt="S4" onclick="window.open('screenshots/S4.png')">
+    <div class="elements-table">
+      <table>
+        <thead><tr><th>Element</th><th>Type</th><th>Selector</th><th>Priority</th></tr></thead>
+        <tbody><tr>
+        <td>android.widget.Button</td>
+        <td>Button</td>
+        <td>none</td>
+        <td>40</td>
+      </tr></tbody>
+      </table>
+      <h3 class="collapsible" style="margin-top:8px">Extracted Texts</h3>
+      <div class="collapse-content texts">Dost se baatein, karna, English bolna, seekhna, Aap kya karna&amp;#10;chahte ho?, Bas ek option choose karo, Something went wrong. Please try again.</div>
+    </div>
+  </div>
+</div>
+
+<h2>Transitions</h2>
+<table>
+  <thead><tr><th>From</th><th>Element</th><th>To</th><th>Result</th></tr></thead>
+  <tbody><tr>
+      <td>S3</td>
+      <td>android.widget.Button</td>
+      <td>S4</td>
+      <td><span class="badge badge-nav">navigated</span></td>
+    </tr>
+<tr>
+      <td>S4</td>
+      <td>android.widget.Button</td>
+      <td>S3</td>
+      <td><span class="badge badge-nav">navigated</span></td>
+    </tr></tbody>
+</table>
+
+
+
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
+document.querySelectorAll('.collapsible').forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.toggle('open');
+    el.nextElementSibling.classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>

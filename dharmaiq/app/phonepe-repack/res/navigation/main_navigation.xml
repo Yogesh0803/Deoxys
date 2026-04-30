@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/main_navigation" app:startDestination="@id/homeFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <dialog android:name="com.phonepe.simulator_offline.ui.upiIntent.fragment.upiIntent.UpiIntentFragment" android:id="@id/upiIntentFragment">
+        <argument android:name="upiIntentFragmentArgs" app:argType="com.phonepe.simulator_offline.ui.upiIntent.fragment.upiIntent.model.UpiIntentFragmentArgs" />
+        <action android:id="@id/action_upiIntentFragment_to_mpinFragment" app:destination="@id/mpinFragment" />
+    </dialog>
+    <dialog android:name="com.phonepe.simulator_offline.ui.upiIntent.fragment.result.ResultFragment" android:id="@id/resultFragment">
+        <argument android:name="resultInitArgs" app:argType="com.phonepe.simulator_offline.ui.upiIntent.fragment.result.ResultInitArgs" />
+    </dialog>
+    <fragment android:label="Settings" android:name="com.phonepe.simulator_offline.ui.SettingsFragment" android:id="@id/settingsFragment" />
+    <fragment android:label="@string/app_name" android:name="com.phonepe.simulator_offline.ui.home.HomeFragment" android:id="@id/homeFragment">
+        <action android:id="@id/action_homeFragment_settingsFragment" app:destination="@id/settingsFragment" />
+        <action android:id="@id/action_homeFragment_checkCollectReqFragment" app:destination="@id/checkCollectReqFragment" />
+        <action android:id="@id/action_homeFragment_to_mandateListFragment" app:destination="@id/mandateListFragment" />
+        <action android:id="@id/action_homeFragment_to_templateInfoFragment" app:destination="@id/templateInfoFragment" />
+        <action android:id="@id/action_homeFragment_to_resolveIntentFragment" app:destination="@id/resolveIntentFragment" />
+        <action android:id="@id/action_homeFragment_to_mandateIntentFragment" app:destination="@id/mandateIntentFragment" />
+        <action android:id="@id/action_homeFragment_to_VPADialogFragment" app:destination="@id/VPADialogFragment" />
+    </fragment>
+    <dialog android:label="fragment_check_collect_req" android:name="com.phonepe.simulator_offline.ui.collect.checkCollectReq.CheckCollectReqFragment" android:id="@id/checkCollectReqFragment">
+        <action android:id="@id/action_checkCollectReqFragment_to_collectRequestsFragment" app:destination="@id/collectRequestsFragment" app:popUpTo="@id/homeFragment" />
+    </dialog>
+    <dialog android:label="collectRequestsFragment" android:name="com.phonepe.simulator_offline.ui.collect.collectRequests.CollectRequestFragment" android:id="@id/collectRequestsFragment">
+        <argument android:name="paymentInfo" app:argType="com.phonepe.simulator_offline.ui.collect.CollectReqInitArgs[]" />
+        <action android:id="@id/action_collectRequestsFragment_to_paymentInfoFragment" app:destination="@id/paymentInfoFragment" app:popUpTo="@id/homeFragment" />
+    </dialog>
+    <fragment android:name="com.phonepe.simulator_offline.ui.collect.paymentInfo.PaymentInfoFragment" android:id="@id/paymentInfoFragment">
+        <argument android:name="paymentInfo" app:argType="com.phonepe.simulator_offline.ui.collect.CollectReqInitArgs" />
+        <action android:id="@id/action_paymentInfoFragment_to_paymentInstrumentDialogFragment" app:destination="@id/paymentInstrumentDialogFragment" />
+    </fragment>
+    <dialog android:label="PaymentInstrumentDialogFragment" android:name="com.phonepe.simulator_offline.ui.collect.paymentInstrumentDialogFragment.PaymentInstrumentDialogFragment" android:id="@id/paymentInstrumentDialogFragment">
+        <argument android:name="paymentInfo" app:argType="com.phonepe.simulator_offline.ui.collect.CollectReqInitArgs" />
+        <action android:id="@id/action_paymentInstrumentDialogFragment_to_mpinFragment" app:destination="@id/mpinFragment" />
+    </dialog>
+    <fragment android:name="com.phonepe.simulator_offline.ui.upiIntent.fragment.mpin.MpinFragment" android:id="@id/mpinFragment">
+        <argument android:name="paymentInfo" app:argType="com.phonepe.simulator_offline.ui.upiIntent.fragment.mpin.MpinInitArgs" />
+        <action android:id="@id/action_mpinFragment_to_resultFragment" app:destination="@id/resultFragment" app:popUpTo="@id/homeFragment" />
+        <action android:id="@id/action_mpinFragment_to_paymentFullPageResultFragment" app:destination="@id/paymentFullPageResultFragment" app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment android:name="com.phonepe.simulator_offline.ui.collect.result.PaymentFullPageResultFragment" android:id="@id/paymentFullPageResultFragment">
+        <argument android:name="paymentInfo" app:argType="com.phonepe.simulator_offline.ui.collect.result.PaymentFullPageInitArgs" />
+    </fragment>
+    <dialog android:label="fragment_mandate_intent" android:name="com.phonepe.simulator_offline.ui.mandate.intent.MandateIntentFragment" android:id="@id/mandateIntentFragment">
+        <action android:id="@id/action_mandateIntentFragment_to_mpinFragment" app:destination="@id/mpinFragment" />
+        <argument android:name="intentUrl" app:argType="string" />
+        <argument android:name="isIntentFlow" android:defaultValue="true" app:argType="boolean" />
+    </dialog>
+    <fragment android:label="@string/subscription_list" android:name="com.phonepe.simulator_offline.ui.mandate.fragment.mandateList.MandateListFragment" android:id="@id/mandateListFragment">
+        <action android:id="@id/action_mandateListFragment_to_mandateDetailFragment" app:destination="@id/mandateDetailFragment" />
+    </fragment>
+    <fragment android:label="@string/subscription_details" android:name="com.phonepe.simulator_offline.ui.mandate.fragment.mandateDetail.MandateDetailFragment" android:id="@id/mandateDetailFragment">
+        <argument android:name="mandateDetail" app:argType="com.phonepe.simulator_offline.ui.mandate.fragment.mandateDetail.MandateDetailArgs" />
+        <action android:id="@id/action_mandateDetailFragment_to_mpinFragment" app:destination="@id/mpinFragment" />
+    </fragment>
+    <fragment android:label="@string/template_info" android:name="com.phonepe.simulator_offline.ui.template.templateInfo.TemplateInfoFragment" android:id="@id/templateInfoFragment">
+        <action android:id="@id/action_templateInfoFragment_to_templateListFragment" app:destination="@id/templateListFragment" />
+    </fragment>
+    <fragment android:label="@string/set_template" android:name="com.phonepe.simulator_offline.ui.template.templateList.TemplateListFragment" android:id="@id/templateListFragment">
+        <argument android:name="flowKey" app:argType="string" />
+        <argument android:name="selectedTemplate" app:argType="com.phonepe.simulator_offline.data.network.template.Template" app:nullable="true" />
+    </fragment>
+    <dialog android:name="com.phonepe.simulator_offline.ui.alert.AlertFragment" android:id="@id/alertFragment">
+        <argument android:name="alertInitArgs" app:argType="com.phonepe.simulator_offline.ui.alert.model.AlertInitArgs" />
+    </dialog>
+    <action android:id="@id/action_global_alertFragment" app:destination="@id/alertFragment" />
+    <dialog android:name="com.phonepe.simulator_offline.ui.upiIntent.fragment.oneClickPayment.OneClickPaymentFragment" android:id="@id/oneClickPaymentFragment">
+        <argument android:name="oneClickPaymentArgs" app:argType="com.phonepe.simulator_offline.ui.upiIntent.fragment.oneClickPayment.OneClickPaymentArgs" />
+        <action android:id="@id/action_oneClickPaymentFragment_to_resultFragment" app:destination="@id/resultFragment" />
+    </dialog>
+    <fragment android:label="@string/pay" android:name="com.phonepe.simulator_offline.ui.staticQrPayment.StaticQRPaymentFragment" android:id="@id/staticQRPaymentFragment">
+        <argument android:name="staticQRPaymentArgs" app:argType="com.phonepe.simulator_offline.ui.staticQrPayment.model.StaticQRPaymentArgs" />
+        <action android:id="@id/action_staticQRPaymentFragment_to_upiIntentFragment" app:destination="@id/upiIntentFragment" />
+    </fragment>
+    <dialog android:label="fragment_resolve_intent" android:name="com.phonepe.simulator_offline.ui.resolve.ResolveIntentFragment" android:id="@id/resolveIntentFragment">
+        <argument android:name="intentUrl" android:defaultValue="0" app:argType="string" />
+        <argument android:name="isIntentFlow" android:defaultValue="true" app:argType="boolean" />
+        <action android:id="@id/action_resolveIntentFragment_to_upiIntentFragment" app:destination="@id/upiIntentFragment" />
+        <action android:id="@id/action_resolveIntentFragment_to_oneClickPaymentFragment" app:destination="@id/oneClickPaymentFragment" />
+        <action android:id="@id/action_resolveIntentFragment_to_staticQRPaymentFragment" app:destination="@id/staticQRPaymentFragment" />
+        <action android:id="@id/action_resolveIntentFragment_to_mpinFragment" app:destination="@id/mpinFragment" />
+    </dialog>
+    <dialog android:name="com.phonepe.simulator_offline.ui.vpa.VPADialogFragment" android:id="@id/VPADialogFragment" />
+</navigation>

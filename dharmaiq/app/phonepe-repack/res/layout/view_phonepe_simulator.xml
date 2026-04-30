@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_warning" android:background="@color/cardview_dark_background" android:padding="@dimen/default_space_4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/default_space_4" android:text="@string/this_is_a_simulator_application" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

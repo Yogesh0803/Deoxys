@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="method_names">
+        <item>https://mercury-stg.phonepe.com/transact/simulatorpay</item>
+        <item>https://mercury-uat.phonepe.com/transact/simulatorpay</item>
+    </string-array>
+    <string-array name="pref_environment_options">
+        <item>@string/stage_key</item>
+        <item>@string/uat_key</item>
+    </string-array>
+</resources>

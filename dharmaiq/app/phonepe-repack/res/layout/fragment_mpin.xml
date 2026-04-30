@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/fragment_mpin_0" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/dimen_text_16" android:textColor="@color/black" android:id="@id/bank_name" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" android:layout_marginStart="@dimen/default_space_16" app:layout_constraintBottom_toBottomOf="@id/upi_logo" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@id/upi_logo" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/upi_logo" android:layout_width="wrap_content" android:layout_height="35.0dip" android:layout_margin="@dimen/default_space_8" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_upi_logo_vector" />
+    <RelativeLayout android:id="@id/banner" android:background="@color/mpinDarkBlue" android:padding="@dimen/default_space_4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_space_8" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/upi_logo">
+        <TextView android:textSize="@dimen/dimen_text_16" android:textColor="@color/white" android:id="@id/merchant_name" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/default_space_16" />
+        <TextView android:textSize="@dimen/dimen_text_16" android:textColor="@color/white" android:id="@id/amount" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/default_space_8" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/dimen_text_16" android:textStyle="bold" android:id="@id/enter_upi_pin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_space_72" android:text="@string/enter_upi_pin" android:fontFamily="sans-serif-medium" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/banner" />
+    <TextView android:textSize="64.0sp" android:textStyle="bold" android:textColor="@color/black" android:id="@id/mpin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLength="6" android:inputType="textPassword" android:fontFamily="monospace" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/enter_upi_pin" />
+    <GridLayout android:tag="binding_4" android:background="@color/colorGreyLight" android:layout_width="fill_parent" android:layout_height="wrap_content" android:rowCount="4" android:columnCount="3" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent">
+        <TextView android:text="@string/_1" style="@style/mpin_grid_cell_style" />
+        <TextView android:text="@string/_2" style="@style/mpin_grid_cell_style" />
+        <TextView android:text="@string/_3" style="@style/mpin_grid_cell_style" />
+        <TextView android:text="@string/_4" style="@style/mpin_grid_cell_style" />
+        <TextView android:text="@string/_5" style="@style/mpin_grid_cell_style" />
+        <TextView android:text="@string/_6" style="@style/mpin_grid_cell_style" />
+        <TextView android:text="@string/_7" style="@style/mpin_grid_cell_style" />
+        <TextView android:text="@string/_8" style="@style/mpin_grid_cell_style" />
+        <TextView android:text="@string/_9" style="@style/mpin_grid_cell_style" />
+        <androidx.appcompat.widget.AppCompatImageView android:gravity="center" android:layout_gravity="fill_horizontal" android:id="@id/delete" android:tag="binding_5" android:padding="@dimen/default_space_4" android:layout_width="0.0dip" android:layout_height="50.0dip" android:layout_columnWeight="1.0" app:srcCompat="@drawable/ic_baseline_delete_24" />
+        <TextView android:text="@string/_0" style="@style/mpin_grid_cell_style" />
+        <androidx.appcompat.widget.AppCompatImageView android:gravity="center" android:layout_gravity="fill_horizontal" android:id="@id/done" android:tag="binding_6" android:padding="@dimen/default_space_4" android:layout_width="0.0dip" android:layout_height="50.0dip" android:layout_columnWeight="1.0" app:srcCompat="@drawable/ic_baseline_done_24" />
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
